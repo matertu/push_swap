@@ -6,11 +6,18 @@
 /*   By: matheus <matheus@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 21:13:33 by msouza-t          #+#    #+#             */
-/*   Updated: 2026/07/24 03:14:57 by matheus          ###   ########.fr       */
+/*   Updated: 2026/07/24 14:38:31 by matheus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	check_input()
+{
+	
+}
+
+
 
 int check_input_bench(char *arg)
 {
@@ -52,7 +59,9 @@ int check_flags(int argc, char **argv, t_flags flags)
         else
 		{
 			if (flags.algorithm != none)
-            check_input_algorithm(argv[i], &flags.algorithm);
+            	check_input_algorithm(argv[i], &flags.algorithm);
+			else if (check_input_algorithm(argv[i], &flags.algorithm))
+				return (0);
 		}
         i++;
     }
