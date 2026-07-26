@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   validate_input                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matheus <matheus@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/23 20:43:03 by matheus           #+#    #+#             */
-/*   Updated: 2026/07/26 17:47:18 by matheus          ###   ########.fr       */
+/*   Created: 2026/07/25 16:37:35 by matheus           #+#    #+#             */
+/*   Updated: 2026/07/26 17:43:58 by matheus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+int validate_input(int argc, char **argv, t_flags *flags)
 {
-	t_flags flags;
+    int start;
 
-	if (argc < 2)
-		return (0);
-	if (!validate_input(argc, argv, &flags))
-	{
-		print_error();
-		return (0);
-	}
-	else
-	{
-		ft_putstr_fd("OK\n", 1);
-	}
-	return (0);
-	
+    start = check_flags(argc, argv, flags);
+    if (start == -1 || start >= argc)
+        return (0); 
+    if (argc - start == 1)
+    {
+        if (!check_string_arg(argv[start]))
+            return (0);
+    }
+    else
+    {
+        if (!check_matrix_arg(argc, argv, start))
+            return (0);
+    }
+    return (start);
 }
