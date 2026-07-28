@@ -6,14 +6,14 @@
 /*   By: matheus <matheus@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 21:13:33 by msouza-t          #+#    #+#             */
-/*   Updated: 2026/07/25 16:55:04 by matheus          ###   ########.fr       */
+/*   Updated: 2026/07/27 22:30:03 by matheus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	initialize_flags(t_flags *flag)
-{
+{	
 	flag->algorithm = none;
 	flag->bench = 0;
 }
@@ -44,20 +44,20 @@ int check_flags(int argc, char **argv, t_flags *flags)
     t_algorithm algorithm;
 
     i = 1;
-    initialize_flags(flags);
+	initialize_flags(flags);
     while (i < argc && i <= 2)
     {
         algorithm = parse_algorithm_flag(argv[i]);
         if (algorithm != none)
         {
             if (flags->algorithm != none)
-                return (-1);
+                return (0);
             flags->algorithm = algorithm;
         }
         else if (is_bench_flag(argv[i]))
         {
             if (flags->bench == 1)
-                return (-1);
+                return (0);
             flags->bench = 1;
         }
         else

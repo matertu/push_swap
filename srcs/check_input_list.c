@@ -6,11 +6,11 @@
 /*   By: matheus <matheus@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 21:13:33 by msouza-t          #+#    #+#             */
-/*   Updated: 2026/07/26 16:31:33 by matheus          ###   ########.fr       */
+/*   Updated: 2026/07/27 22:30:45 by matheus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 int isnumber(char *arg)
 {
@@ -32,7 +32,7 @@ int	check_matrix_arg(int argc, char **argv, int start)
 {
 	while (start < argc)
 	{
-		if (isnumber(argv[start]) != ft_strlen(argv[start]))
+		if (isnumber(argv[start]) != (int)ft_strlen(argv[start]))
 			return (0);
 		start++;
 	}
