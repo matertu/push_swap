@@ -1,30 +1,32 @@
-NAME        = push_swap
+NAME          = push_swap
+CC            = cc
+CFLAGS        = -Wall -Wextra -Werror
 
-CC          = cc
-CFLAGS      = -Wall -Wextra -Werror
+LIBFT_DIR     = ./libft
+LIBFT         = $(LIBFT_DIR)/libft.a
 
-LIBFT_DIR   = ./libft
-LIBFT       = $(LIBFT_DIR)/libft.a
+NODE_DIR      = ./node
+LIBNODE       = $(NODE_DIR)/libnode.a
 
-NODE_DIR    = ./node
-LIBNODE     = $(NODE_DIR)/libnode.a
+PRINTF_DIR    = ./ft_printf
+LIBPRINTF     = $(PRINTF_DIR)/libftprintf.a
 
-SRCS        = $(filter-out srcs/run_algorithm.c, $(wildcard srcs/*.c))
+SRCS          = $(filter-out srcs/run_algorithm.c, $(wildcard srcs/*.c))
+OBJS          = $(SRCS:.c=.o)
 
-OBJS        = $(SRCS:.c=.o)
+all: $(LIBFT) $(LIBNODE) $(LIBPRINTF) $(NAME)
 
-all: $(LIBFT) $(LIBNODE) $(NAME)
-
-# Compila a Libft chamando o Makefile dela
 $(LIBFT):
 	@make -C $(LIBFT_DIR)
 
-# Compila a libnode chamando o Makefile dela
 $(LIBNODE):
 	@make -C $(NODE_DIR)
 
-$(NAME): $(OBJS) $(LIBFT) $(LIBNODE)
-	$(CC) $(CFLAGS) $(OBJS) -L$(LIBFT_DIR) -lft -L$(NODE_DIR) -lnode -o $(NAME)
+$(LIBPRINTF):
+	@make -C $(PRINTF_DIR)
+
+$(NAME): $(OBJS) $(LIBFT) $(LIBNODE) $(LIBPRINTF)
+	$(CC) $(CFLAGS) $(OBJS) -L$(NODE_DIR) -lnode -L$(PRINTF_DIR) -lftprintf -L$(LIBFT_DIR) -lft -o $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -32,11 +34,13 @@ $(NAME): $(OBJS) $(LIBFT) $(LIBNODE)
 clean:
 	@make clean -C $(LIBFT_DIR)
 	@make clean -C $(NODE_DIR)
+	@make clean -C $(PRINTF_DIR)
 	rm -f $(OBJS)
 
 fclean: clean
 	@make fclean -C $(LIBFT_DIR)
 	@make fclean -C $(NODE_DIR)
+	@make fclean -C $(PRINTF_DIR)
 	rm -f $(NAME)
 
 re: fclean all

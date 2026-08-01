@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matheus <matheus@student.42.fr>            +#+  +:+       +#+        */
+/*   By: msouza-t <msouza-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 21:27:30 by msouza-t          #+#    #+#             */
-/*   Updated: 2026/07/27 22:30:03 by matheus          ###   ########.fr       */
+/*   Updated: 2026/08/01 02:27:23 by msouza-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,36 @@ void	put_error()
 int	empty_list(t_stack *stack)
 {
 	if (!stack || stack->top == NULL)
+		return (1);
+	return (0);
+}
+
+long	ft_atol(const char *nptr)
+{
+	long	cont;
+	int		sign;
+	int		i;
+
+	cont = 0;
+	sign = 1;
+	i = 0;
+	if (nptr[i] == '-' || nptr[i] == '+')
+	{
+		if (nptr[i] == '-')
+			sign = -1;
+		i++;
+	}
+	while (ft_isdigit(nptr[i]))
+	{
+		cont = (cont * 10) + (nptr[i] - '0');
+		i++;
+	}
+	return (sign * cont);
+}
+
+int	to_long(long value)
+{
+	if (value > 2147483647 || value < -2147483648)
 		return (1);
 	return (0);
 }

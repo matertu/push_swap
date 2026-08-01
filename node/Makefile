@@ -1,8 +1,6 @@
 NAME        = libnode.a
-
 CC          = cc
 CFLAGS      = -Wall -Wextra -Werror
-
 SRCS        = node.c
 OBJS        = $(SRCS:.c=.o)
 

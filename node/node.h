@@ -1,31 +1,24 @@
-// node.h - linked list implementation
-
 #ifndef NODE_H
-#define NODE_H
+# define NODE_H
 
-#include <stdlib.h>
-#include <stdio.h>
+# include <stdio.h>
+# include <stdlib.h>
 
-#define FMT "%d "
+typedef int	t_item;
 
-typedef int Item;
+typedef struct s_node
+{
+	t_item			item;
+	struct s_node	*next;
+} * t_node;
 
-typedef struct s_node {
-   Item item;
-   struct s_node *next;
-} *List;
-
-List new_node(Item x, List p);
-void display(List L);
-void append(List *A, List B);
-void destroy_list(List *L);
-int list_size(List L);
-int contains(Item x, List L);
-Item get_last(List L);
-List clone(List L);
-List reverse(List L);
-void display_reverse(List L);
-void insert(Item x, List L);
-List replace(Item a, Item b, List L);
+t_node				new_node(t_item x);
+void				append(t_node *A, t_node B);
+void				destroy_list(t_node *L);
+int					list_size(t_node L);
+int					contains(t_item x, t_node L);
+t_item				get_last(t_node L);
+int					insert(t_item x, t_node L);
+void				print_list(t_node list);
 
 #endif

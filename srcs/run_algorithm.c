@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   run_algorithm.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matheus <matheus@student.42.fr>            +#+  +:+       +#+        */
+/*   By: msouza-t <msouza-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/26 20:05:04 by matheus           #+#    #+#             */
-/*   Updated: 2026/07/27 22:40:43 by matheus          ###   ########.fr       */
+/*   Updated: 2026/08/01 03:07:50 by msouza-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,12 @@ void    initialize_bench_relatory(t_bench_relatory *bench_relatory)
     ft_memset(bench_relatory, 0, sizeof(t_bench_relatory));
 }
 
-void	print_relatory(t_bench_relatory, t_flags *flags)
+void	print_bench(t_bench_relatory *bench_ralatory, t_flags *flags)
 {
 	if (!flags->bench)
 		return ;
+	
+	
 	
 }
 int	run_algorithm(t_list a, t_list b, t_flags *flags, t_bench_relatory *bench_relatory)
@@ -49,7 +51,6 @@ int	run_algorithm(t_list a, t_list b, t_flags *flags, t_bench_relatory *bench_re
 		if (!run_complex_algorithm(&a, &b, bench_relatory));
 			return (0);
 	}
-	if (flags->bench)
-		put_bench(bench_relatory);
+	print_bench(bench_relatory, &flags);
 	return (1);
 }
