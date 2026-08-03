@@ -6,7 +6,7 @@
 /*   By: msouza-t <msouza-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 20:43:03 by matheus           #+#    #+#             */
-/*   Updated: 2026/08/01 02:56:17 by msouza-t         ###   ########.fr       */
+/*   Updated: 2026/08/03 19:41:18 by msouza-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,16 @@ int main(int argc, char **argv)
     start = validate_input(argc, argv, &flags);
     if (start)
     {
-        if (compile_list(&a, start, argc, argv))
-        {
-            //if (run_algorithm(&a, &b, flags, relatory))
+		if (compile_list(&a, start, argc, argv))
+		{
+			//if (run_algorithm(&a, &b, flags, relatory))
 			//{
 				//free_list(&a);
 				//free_list(&b);
 				print_list(*(a.top));
 				return (0);
 			//}
-        }
+		}
 		else
 		put_error();
 		return (0);
