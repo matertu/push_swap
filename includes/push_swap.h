@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msouza-t <msouza-t@student.42.fr>          +#+  +:+       +#+        */
+/*   By: matheus <matheus@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 21:13:54 by msouza-t          #+#    #+#             */
-/*   Updated: 2026/08/01 02:48:12 by msouza-t         ###   ########.fr       */
+/*   Updated: 2026/08/02 20:15:50 by matheus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,6 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-
-typedef struct s_stack
-{
-	t_node		*top;
-	int			size;
-}				t_stack;
 
 typedef enum e_algorithm
 {

@@ -6,7 +6,7 @@ LIBFT_DIR     = ./libft
 LIBFT         = $(LIBFT_DIR)/libft.a
 
 NODE_DIR      = ./node
-LIBNODE       = $(NODE_DIR)/libnode.a
+LIBNODE       = $(STACK_DIR)/stack.a
 
 PRINTF_DIR    = ./ft_printf
 LIBPRINTF     = $(PRINTF_DIR)/libftprintf.a

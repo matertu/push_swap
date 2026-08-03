@@ -1,4 +1,4 @@
-NAME        = libnode.a
+NAME        = stack.a
 CC          = cc
 CFLAGS      = -Wall -Wextra -Werror
 SRCS        = node.c
