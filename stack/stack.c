@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   node.c                                             :+:      :+:    :+:   */
+/*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matheus <matheus@student.42.fr>            +#+  +:+       +#+        */
+/*   By: msouza-t <msouza-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 21:01:48 by msouza-t          #+#    #+#             */
-/*   Updated: 2026/08/02 20:35:06 by matheus          ###   ########.fr       */
+/*   Updated: 2026/08/03 18:14:55 by msouza-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,55 +69,4 @@ void    destroy_stack(t_stack *stack)
     }
     stack->first = NULL;
     stack->top = NULL;
-}
-
-int	list_size(t_node L)
-{
-	if (L == NULL)
-		return (0);
-	return (1 + list_size(L->next));
-}
-
-int	contains(int x, t_node L)
-{
-	if (L == NULL)
-		return (0);
-	if (x == L->item)
-		return (1);
-	return (contains(x, L->next));
-}
-int	get_last(t_node L)
-{
-	if (!L)
-		return (0);
-	while (L->next)
-		L = L->next;
-	return (L->item);
-}
-
-int	insert(int x, t_node l)
-{
-	t_node	temp;
-
-	if (!l)
-		return (0);
-	while (l->next)
-		l = l->next;
-	temp = new_node(x);
-	if (!temp)
-		return (0);
-	l->next = temp;
-	return (1);
-}
-
-void	print_list(t_node list)
-{
-	t_node	current;
-
-	current = list;
-	while (current != NULL)
-	{
-		ft_printf("%d\n", current->item);
-		current = current->next;
-	}
 }

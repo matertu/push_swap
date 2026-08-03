@@ -1,7 +1,8 @@
 NAME        = stack.a
 CC          = cc
 CFLAGS      = -Wall -Wextra -Werror
-SRCS        = node.c
+SRCS        = 	stack.c /
+				utils.c
 OBJS        = $(SRCS:.c=.o)
 
 all: $(NAME)
