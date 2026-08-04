@@ -6,7 +6,7 @@
 /*   By: msouza-t <msouza-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 21:01:48 by msouza-t          #+#    #+#             */
-/*   Updated: 2026/08/03 18:14:55 by msouza-t         ###   ########.fr       */
+/*   Updated: 2026/08/03 20:57:16 by msouza-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,16 @@ t_node	*new_node(int x)
 	return (n);
 }
 
-void    append(t_stack *stack, int value)
+int    append(int value, t_stack *stack)
 {
     t_node  *node;
 
-    if (!stack)
-        return ;
     node = new_node(value);
     if (!node)
-        return ;
+	{
+		destroy_stack(stack);
+        return (0);
+	}
     if (!stack->first)
     {
         node->next = node;
@@ -49,6 +50,7 @@ void    append(t_stack *stack, int value)
         stack->first->prev = node;
         stack->top = node;
     }
+	return (1);
 }
 
 void    destroy_stack(t_stack *stack)

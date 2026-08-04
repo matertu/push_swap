@@ -5,7 +5,7 @@ CFLAGS        = -Wall -Wextra -Werror
 LIBFT_DIR     = ./libft
 LIBFT         = $(LIBFT_DIR)/libft.a
 
-NODE_DIR      = ./node
+NODE_DIR      = ./stack
 LIBNODE       = $(STACK_DIR)/stack.a
 
 PRINTF_DIR    = ./ft_printf
@@ -26,7 +26,7 @@ $(LIBPRINTF):
 	@make -C $(PRINTF_DIR)
 
 $(NAME): $(OBJS) $(LIBFT) $(LIBNODE) $(LIBPRINTF)
-	$(CC) $(CFLAGS) $(OBJS) -L$(NODE_DIR) -lnode -L$(PRINTF_DIR) -lftprintf -L$(LIBFT_DIR) -lft -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) -L$(NODE_DIR) -lstack -L$(PRINTF_DIR) -lftprintf -L$(LIBFT_DIR) -lft -o $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@

@@ -3,6 +3,7 @@
 
 # include <stdio.h>
 # include <stdlib.h>
+# include "../libft/libft.h"
 
 typedef struct s_node
 {
@@ -17,13 +18,13 @@ typedef struct s_stack
 	t_node		*first;
 }				t_stack;
 
-t_node				new_node(int x);
-void				append(int value, t_stack *stack);
-void				destroy_list(t_node *L);
-int					list_size(t_node L);
-int					contains(int x, t_node L);
-int					get_last(t_node L);
-int					insert(int x, t_node L);
-void				print_list(t_node list);
+t_node				*new_node(int x);
+int					append(int value, t_stack *stack);
+void				destroy_list(t_stack *stack);
+int					list_size(t_stack *stack);
+int					contains(int x, t_stack *stack);
+int					get_last(t_stack *stack);
+int					insert(int x, t_stack *stack);
+void				print_list(t_stack *stack);
 
 #endif

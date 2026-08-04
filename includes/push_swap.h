@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matheus <matheus@student.42.fr>            +#+  +:+       +#+        */
+/*   By: msouza-t <msouza-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 21:13:54 by msouza-t          #+#    #+#             */
-/*   Updated: 2026/08/02 20:15:50 by matheus          ###   ########.fr       */
+/*   Updated: 2026/08/03 20:05:34 by msouza-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "../ft_printf/ft_printf.h"
 # include "../libft/libft.h"
-# include "../node/node.h"
+# include "../stack/stack.h"
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>

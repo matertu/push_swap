@@ -6,7 +6,7 @@
 /*   By: msouza-t <msouza-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 20:43:03 by matheus           #+#    #+#             */
-/*   Updated: 2026/08/03 19:41:18 by msouza-t         ###   ########.fr       */
+/*   Updated: 2026/08/03 21:05:23 by msouza-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int main(int argc, char **argv)
 			//{
 				//free_list(&a);
 				//free_list(&b);
-				print_list(*(a.top));
+				print_list(&a);
 				return (0);
 			//}
 		}

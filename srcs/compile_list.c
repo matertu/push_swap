@@ -6,7 +6,7 @@
 /*   By: msouza-t <msouza-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/28 20:57:41 by matheus           #+#    #+#             */
-/*   Updated: 2026/08/01 02:59:26 by msouza-t         ###   ########.fr       */
+/*   Updated: 2026/08/03 20:59:25 by msouza-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,22 +33,20 @@ int	compile_arg_list(t_stack *a, int start, int argc, char **argv)
 {
 	int		i;
 	long	value;
-	t_node	list;
+	t_node	*node;
 
 	i = start;
-	list = NULL;
+	node = NULL;
 	while (i < argc)
 	{
 		value = ft_atol(argv[i]);
-		if (!add_node(&list, value))
+		if (!add_node(&node, value))
 		{
-			destroy_list(&list);
+			destroy_list(a);
 			return (0);
 		}
-		a->size++;
 		i++;
 	}
-	a->top = &list;
 	return (1);
 }
 
@@ -56,46 +54,23 @@ int	compile_string_list(t_stack *a, char *argv)
 {
 	int		i;
 	long	value;
-	t_node	list;
 
 	i = 0;
-	list = NULL;
 	while (argv[i])
 	{
 		while (argv[i] && ft_isspace(argv[i]))
 			i++;
 		if (argv[i] == '\0')
-			break ;
+			return (0);
 		value = ft_atol(&argv[i]);
-		if (!add_node(&list, value))
+		if (to_long(value) || contains(value, a))
 		{
-			destroy_list(&list);
+			destroy_list(a);
 			return (0);
 		}
-		a->size++;
+		if (!append((int)value, a))
+			return (0);
 		i += isnumber(&argv[i]);
-	}
-	a->top = &list;
-	return (1);
-}
-
-int	add_node(t_node *list, long value)
-{
-	t_node	new;
-
-	if (to_long(value) || contains(value, *list))
-		return (0);
-	if (*list == NULL)
-	{
-		new = new_node((int)value);
-		if (!new)
-			return (0);
-		*list = new;
-	}
-	else
-	{
-		if (!insert((int)value, *list))
-			return (0);
 	}
 	return (1);
 }
