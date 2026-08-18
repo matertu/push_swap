@@ -6,7 +6,7 @@
 /*   By: msouza-t <msouza-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 21:13:54 by msouza-t          #+#    #+#             */
-/*   Updated: 2026/08/03 20:05:34 by msouza-t         ###   ########.fr       */
+/*   Updated: 2026/08/03 21:07:47 by msouza-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ typedef struct s_bench_relatory
 	int			rra;
 	int			rrb;
 	int			rrr;
-}				t_bench_relatory;
+}				t_bench;
 
 int				validate_input(int argc, char **argv, t_flags *flags);
 int				isnumber(char *arg);

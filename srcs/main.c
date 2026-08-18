@@ -6,7 +6,7 @@
 /*   By: msouza-t <msouza-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 20:43:03 by matheus           #+#    #+#             */
-/*   Updated: 2026/08/03 21:05:23 by msouza-t         ###   ########.fr       */
+/*   Updated: 2026/08/03 21:07:47 by msouza-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 {
     int     			start;
     t_flags 			flags;
-	// t_bench_relatory	relatory;
+	// t_bench	relatory;
     t_stack  			a;
     //t_stack  			b;
 
