@@ -6,7 +6,7 @@
 /*   By: msouza-t <msouza-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 21:01:48 by msouza-t          #+#    #+#             */
-/*   Updated: 2026/08/17 20:30:22 by msouza-t         ###   ########.fr       */
+/*   Updated: 2026/08/17 23:20:04 by msouza-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,21 +35,7 @@ int    append(int value, t_stack *stack)
 		destroy_stack(stack);
         return (0);
 	}
-    if (!stack->first)
-    {
-        node->next = node;
-        node->prev = node;
-        stack->first = node;
-        stack->top = node;
-    }
-    else
-    {
-        node->prev = stack->top;
-        node->next = stack->first;
-        stack->top->next = node;
-        stack->first->prev = node;
-        stack->top = node;
-    }
+    push(node, stack);
 	return (1);
 }
 

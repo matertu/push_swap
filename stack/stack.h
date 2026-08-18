@@ -26,5 +26,10 @@ int					contains(int x, t_stack *stack);
 int					get_last(t_stack *stack);
 int					insert(int x, t_stack *stack);
 void				print_list(t_stack *stack);
+int					push(t_node *node, t_stack *stack);
+t_node				*pop(t_stack *a);
+int					swap(t_stack *a);
+
+
 
 #endif

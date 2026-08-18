@@ -6,72 +6,46 @@
 /*   By: msouza-t <msouza-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/17 20:13:08 by msouza-t          #+#    #+#             */
-/*   Updated: 2026/08/17 21:25:18 by msouza-t         ###   ########.fr       */
+/*   Updated: 2026/08/17 23:16:52 by msouza-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack.h"
 
-int push(t_stack *a, t_stack *b)
+int	push(t_node *node, t_stack *stack)
 {
-    t_node *temp;
-
-    temp = pop(b);
-    if (!temp)
-        return (0);
-    if (!a->first)
-    {
-        temp->next = temp;
-        temp->prev = temp;
-        a->first = temp;
-        a->top = temp;
-    }
-    else
-    {
-        temp->prev = a->top;
-        temp->next = a->first;
-        a->top->next = temp;
-        a->first->prev = temp;
-        a->top = temp;
-    }
-    return (1);
-}
-
-t_node	*pop(t_stack *a)
-{
-	t_node	*temp;
-
-	if (!a->first || !a->top)
-		return (NULL);
-	if (a->top == a->first)
-    {
-        a->top = NULL;
-        a->first = NULL;
-    }
-    else
-    {
-        a->top = a->top->prev;
-        a->top->next = a->first;
-        a->first->prev = a->top;
-    }
-    temp->next = NULL;
-    temp->prev = NULL;
-    return (temp);
-}
-
-int	swap(t_stack *a)
-{
-	t_node	*temp;
-
-	if (a->top == a->first)
+	if (!stack || !node)
 		return (0);
-	temp = a->top->prev;
-	temp->prev = a->top;
-	a->top->prev = 
-	temp->next = a->first;
-	a->top->prev = 
-	
-	a->top = temp;
+	if (!stack->first)
+	{
+		node->next = node;
+		node->prev = node;
+		stack->first = node;
+		stack->top = node;
+	}
+	else
+	{
+		node->prev = stack->top;
+		node->next = stack->first;
+		stack->top->next = node;
+		stack->first->prev = node;
+		stack->top = node;
+	}
+	return (1);
 }
 
-x  y
+int	pa(t_stack *a, t_stack *b, int print)
+{
+	push(pop(b), a);
+	if (print)
+		ft_putstr_fd("pa\n", 1);
+	return (1);
+}
+
+int	pb(t_stack *a, t_stack *b, int print)
+{
+	push(pop(a), b);
+	if (print)
+		ft_putstr_fd("pb\n", 1);
+	return (1);
+}

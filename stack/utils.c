@@ -6,7 +6,7 @@
 /*   By: msouza-t <msouza-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/03 18:13:59 by msouza-t          #+#    #+#             */
-/*   Updated: 2026/08/03 21:02:22 by msouza-t         ###   ########.fr       */
+/*   Updated: 2026/08/17 22:52:53 by msouza-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,28 @@ int contains(int x, t_stack *stack)
         current = current->next;
     }
     return (0);
+}
+
+t_node	*pop(t_stack *a)
+{
+	t_node	*temp;
+
+	if (!a->first || !a->top)
+		return (NULL);
+	if (a->top == a->first)
+	{
+		a->top = NULL;
+		a->first = NULL;
+	}
+	else
+	{
+		a->top = a->top->prev;
+		a->top->next = a->first;
+		a->first->prev = a->top;
+	}
+	temp->next = NULL;
+	temp->prev = NULL;
+	return (temp);
 }
 
 void    print_list(t_stack *stack)
