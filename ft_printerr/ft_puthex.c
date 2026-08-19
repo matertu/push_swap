@@ -6,11 +6,11 @@
 /*   By: msouza-t <msouza-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 14:36:20 by msouza-t          #+#    #+#             */
-/*   Updated: 2026/06/15 20:17:51 by msouza-t         ###   ########.fr       */
+/*   Updated: 2026/08/18 17:57:37 by msouza-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printerr.h"
 
 int	ft_putletter(int i, int isupper)
 {

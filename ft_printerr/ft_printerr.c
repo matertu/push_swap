@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_printerr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msouza-t <msouza-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 14:10:55 by msouza-t          #+#    #+#             */
-/*   Updated: 2026/06/18 16:52:38 by msouza-t         ###   ########.fr       */
+/*   Updated: 2026/08/18 17:55:07 by msouza-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printerr.h"
 
-int	ft_printf(const char *format, ...)
+int	ft_printerr(const char *format, ...)
 {
 	va_list	args;
 	int		count_char;
@@ -30,8 +30,8 @@ int	ft_printparamter(va_list *args, char type)
 	int	c;
 
 	c = 0;
-	if (!type)
-		return (-1);
+	if (type == 'f')
+		c = ft_putfloat(va_arg(*args, float));
 	else if (type == 'c')
 		c = ft_putchar(va_arg(*args, int));
 	else if (type == 's')

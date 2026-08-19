@@ -6,7 +6,7 @@
 /*   By: msouza-t <msouza-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 21:01:48 by msouza-t          #+#    #+#             */
-/*   Updated: 2026/08/17 23:20:04 by msouza-t         ###   ########.fr       */
+/*   Updated: 2026/08/18 22:17:51 by msouza-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int    append(int value, t_stack *stack)
 	return (1);
 }
 
-void    destroy_stack(t_stack *stack)
+void    free_stack(t_stack *stack)
 {
     t_node  *current;
     t_node  *next_node;

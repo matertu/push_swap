@@ -1,6 +1,6 @@
 *This project has been created as part of the 42 curriculum by msouza-t.*
 
-# FT_PRINTF
+# ft_printerr
 
 A custom implementation of the standard C `printf` function, developed as part of the 42 School curriculum.
 
@@ -8,7 +8,7 @@ A custom implementation of the standard C `printf` function, developed as part o
 
 ## DESCRIPTION
 
-`ft_printf` is a simplified recreation of the standard library function `printf()`. The goal of this project is to gain a deeper understanding of:
+`ft_printerr` is a simplified recreation of the standard library function `printf()`. The goal of this project is to gain a deeper understanding of:
 
 - Variadic functions (`stdarg.h`)
 - String formatting
@@ -45,7 +45,7 @@ make -> will generate 'libftprintf.a'
 cc *.c libftprintf.a
 ```
 
-To call the function in your program include 'ft_printf.h' header, example: #include "ft_printf.h".
+To call the function in your program include 'ft_printerr.h' header, example: #include "ft_printerr.h".
 
 ## RESOURCES
 

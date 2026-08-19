@@ -6,14 +6,14 @@
 /*   By: msouza-t <msouza-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 21:13:54 by msouza-t          #+#    #+#             */
-/*   Updated: 2026/08/03 21:07:47 by msouza-t         ###   ########.fr       */
+/*   Updated: 2026/08/18 17:57:37 by msouza-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PUSH_SWAP_H
 # define FT_PUSH_SWAP_H
 
-# include "../ft_printf/ft_printf.h"
+# include "../ft_printerr/ft_printerr.h"
 # include "../libft/libft.h"
 # include "../stack/stack.h"
 # include <stdio.h>

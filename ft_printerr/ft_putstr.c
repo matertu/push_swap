@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msouza-t <msouza-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/11 13:28:38 by msouza-t          #+#    #+#             */
-/*   Updated: 2026/06/15 20:07:46 by msouza-t         ###   ########.fr       */
+/*   Created: 2026/06/11 13:54:14 by msouza-t          #+#    #+#             */
+/*   Updated: 2026/08/18 17:57:37 by msouza-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printerr.h"
 
-int	ft_putchar(char c)
+int	ft_putstr(char *s)
 {
-	int	x;
+	int	i;
 
-	x = write(1, &c, 1);
-	return (x);
+	i = 0;
+	if (!s)
+		s = "(null)";
+	while (s[i])
+		ft_putchar(s[i++]);
+	return (i);
 }

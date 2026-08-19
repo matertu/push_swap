@@ -6,7 +6,7 @@
 /*   By: msouza-t <msouza-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/03 18:13:59 by msouza-t          #+#    #+#             */
-/*   Updated: 2026/08/17 22:52:53 by msouza-t         ###   ########.fr       */
+/*   Updated: 2026/08/18 21:21:24 by msouza-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,29 @@ t_node	*pop(t_stack *a)
 	temp->next = NULL;
 	temp->prev = NULL;
 	return (temp);
+}
+
+t_node	*pop_first(t_stack *a)
+{
+	t_node	*first;
+
+	if (!a || !a->first)
+		return (NULL);
+	first = a->first;
+	if (a->first == a->top)
+	{
+		a->first = NULL;
+		a->top = NULL;
+	}
+	else
+	{
+		a->first = first->next;
+		a->first->prev = a->top;
+		a->top->next = a->first;
+	}
+	first->next = NULL;
+	first->prev = NULL;
+	return (first);
 }
 
 void    print_list(t_stack *stack)

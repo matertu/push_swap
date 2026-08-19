@@ -6,7 +6,7 @@
 /*   By: msouza-t <msouza-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/17 20:13:08 by msouza-t          #+#    #+#             */
-/*   Updated: 2026/08/17 23:16:52 by msouza-t         ###   ########.fr       */
+/*   Updated: 2026/08/18 21:37:50 by msouza-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,28 @@ int	push(t_node *node, t_stack *stack)
 		stack->top->next = node;
 		stack->first->prev = node;
 		stack->top = node;
+	}
+	return (1);
+}
+
+int	push_first(t_node *node, t_stack *stack)
+{
+	if (!stack || !node)
+		return (0);
+	if (!stack->first)
+	{
+		node->next = node;
+		node->prev = node;
+		stack->first = node;
+		stack->top = node;
+	}
+	else
+	{
+		node->prev = stack->top;
+		node->next = stack->first;
+		stack->top->next = node;
+		stack->first->prev = node;
+		stack->first = node;
 	}
 	return (1);
 }

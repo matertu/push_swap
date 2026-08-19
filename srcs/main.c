@@ -6,7 +6,7 @@
 /*   By: msouza-t <msouza-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 20:43:03 by matheus           #+#    #+#             */
-/*   Updated: 2026/08/03 21:07:47 by msouza-t         ###   ########.fr       */
+/*   Updated: 2026/08/18 18:38:44 by msouza-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@ int main(int argc, char **argv)
 {
     int     			start;
     t_flags 			flags;
-	// t_bench	relatory;
+	//t_bench	relatory;
     t_stack  			a;
     //t_stack  			b;
 
     if (argc < 2)
         return (0);
-    // b = NULL;
+    //b = NULL;
     start = validate_input(argc, argv, &flags);
     if (start)
     {
@@ -40,6 +40,5 @@ int main(int argc, char **argv)
 		put_error();
 		return (0);
     }
-    put_error();
     return (-1);
 }

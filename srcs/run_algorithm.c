@@ -6,7 +6,7 @@
 /*   By: msouza-t <msouza-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/26 20:05:04 by matheus           #+#    #+#             */
-/*   Updated: 2026/08/17 20:03:06 by msouza-t         ###   ########.fr       */
+/*   Updated: 2026/08/18 18:29:18 by msouza-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ void    initialize_bench_relatory(t_bench *bench_relatory)
 void	print_bench(t_bench *bench_relatory, t_flags *flags)
 {
 	if (!flags->bench)
-		return ;
+		return 
+	ft_printerr("[bench] disorder: %")
 	
 	
 }
@@ -33,9 +34,9 @@ int	run_algorithm(t_list a, t_list b, t_flags *flags, t_bench *bench_relatory)
 		
 		return (1);
 	}
-	if (flags->algorithm == adaptive || flags->algorithm == none)
+	else if (flags->algorithm == adaptive || flags->algorithm == none)
 		flags->algorithm = choice_best_algorithm(a, bench_relatory->disorder);
-	if (flags->algorithm == simple)
+	else if (flags->algorithm == simple)
 	{
 		if (!run_simple_algorithm(&a, &b, bench_relatory));
 			return (0);

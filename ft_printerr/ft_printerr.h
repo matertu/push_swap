@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printerr.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msouza-t <msouza-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 14:12:19 by msouza-t          #+#    #+#             */
-/*   Updated: 2026/06/15 19:13:34 by msouza-t         ###   ########.fr       */
+/*   Updated: 2026/08/18 17:55:38 by msouza-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#ifndef FT_PRINTERR_H
+# define FT_PRINTERR_H
 
 # include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
 
-int		ft_printf(const char *format, ...);
+int		ft_printerr(const char *format, ...);
 int		ft_printparamter(va_list *args, char type);
 int		ft_scanstring(const char *s, va_list *args);
 int		ft_putletter_upper(int i);
