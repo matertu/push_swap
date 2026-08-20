@@ -2,12 +2,7 @@ NAME        = libstack.a
 CC          = cc
 CFLAGS      = -Wall -Wextra -Werror
 
-SRCS =	push.c \
-	    shift_down.c \
-	    shift_up.c \
-	    stack.c \
-	    swap.c \
-	    utils.c
+SRCS =	pilha.c
 
 OBJS        = $(SRCS:.c=.o)
 

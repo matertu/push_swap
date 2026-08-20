@@ -36,7 +36,7 @@ void	put_error()
 
 int	empty_list(t_stack *stack)
 {
-	if (!stack || stack->top == NULL)
+	if (!stack || stack->first == NULL)
 		return (1);
 	return (0);
 }

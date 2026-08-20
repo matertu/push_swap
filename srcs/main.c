@@ -21,9 +21,7 @@ int main(int argc, char **argv)
     t_stack  			b;
 
 	a.first = NULL;
-	a.top = NULL;
 	b.first = NULL;
-	b.top = NULL;
     if (argc < 2)
         return (0);
     start = validate_input(argc, argv, &flags);
@@ -195,9 +193,7 @@ int main(int argc, char **argv)
 // 		return (0);
 
 // 	a.first = NULL;
-// 	a.top = NULL;
 // 	b.first = NULL;
-// 	b.top = NULL;
 
 // 	start = validate_input(argc, argv, &flags);
 // 	if (start)

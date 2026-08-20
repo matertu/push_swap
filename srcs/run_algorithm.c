@@ -59,12 +59,12 @@ double	calculate_disorder(t_stack *a)
 	int		mistakes;
 	int		total_pairs;
 
-	if (!a || !a->first || a->first == a->top)
+	if (!a || !a->first || a->first->next == a->first)
 		return (0);
 	mistakes = 0;
 	total_pairs = 0;
 	node_i = a->first;
-	while (node_i != a->top)
+	while (node_i != a->first->prev)
 	{
 		node_j = node_i->next;
 		while (node_j != a->first)
