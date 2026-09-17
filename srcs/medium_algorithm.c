@@ -14,6 +14,6 @@
 
 int	run_medium_algorithm(t_stack *a, t_stack *b, t_bench *bench_relatory)
 {
-	bench_relatory->pa += pa(a, b, 1);
+	pa(a, b, bench_relatory);
 	return (1);
 }

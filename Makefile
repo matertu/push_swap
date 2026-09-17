@@ -11,7 +11,7 @@ LIBSTACK      = $(STACK_DIR)/libstack.a
 PRINTERR_DIR  = ./ft_printerr
 LIBPRINTERR   = $(PRINTERR_DIR)/libftprinterr.a
 
-SRCS          = $(filter-out srcs/run_algorithm.c, $(wildcard srcs/*.c))
+SRCS          = $(wildcard srcs/*.c)
 OBJS          = $(SRCS:.c=.o)
 
 all: $(NAME)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msouza-t <msouza-t@student.42.fr>          +#+  +:+       +#+        */
+/*   By: matheus <matheus@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 21:13:54 by msouza-t          #+#    #+#             */
-/*   Updated: 2026/08/19 22:26:25 by msouza-t         ###   ########.fr       */
+/*   Updated: 2026/09/17 02:18:40 by matheus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,9 @@ typedef struct s_flags
 
 typedef struct s_bench_relatory
 {
+	int			print;
 	double		disorder;
-	t_algorithm	*algorithm;
+	t_algorithm	algorithm;
 	int			total_ops;
 	int			sa;
 	int			sb;
@@ -71,7 +72,7 @@ int				run_simple_algorithm(t_stack *a, t_stack *b, t_bench *bench_relatory);
 int				run_medium_algorithm(t_stack *a, t_stack *b, t_bench *bench_relatory);
 int				run_complex_algorithm(t_stack *a, t_stack *b, t_bench *bench_relatory);
 void    		initialize_bench_relatory(t_bench *bench_relatory);
-int				run_algorithm(t_stack a, t_stack b, t_flags *flags, t_bench *bench_relatory);
+int				run_algorithm(t_stack *a, t_stack *b, t_flags *flags, t_bench *bench_relatory);
 t_algorithm		chose_algorithm(double disorder);
 double			calculate_disorder(t_stack *a);
 char			*get_strategy(t_algorithm algo);

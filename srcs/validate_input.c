@@ -16,7 +16,7 @@ int validate_input(int argc, char **argv, t_flags *flags)
 {
     int start;
 
-    start = check_flags(argc, argv, flags);
+    start = check_input_flags(argc, argv, flags);
     if (!start || start >= argc)
         return (0);
     if (argc - start == 1)

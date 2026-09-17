@@ -6,7 +6,7 @@
 /*   By: matheus <matheus@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 21:01:48 by msouza-t          #+#    #+#             */
-/*   Updated: 2026/09/13 23:12:51 by matheus          ###   ########.fr       */
+/*   Updated: 2026/09/17 02:18:32 by matheus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,19 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
+typedef struct s_bench_relatory	t_bench;
 
 typedef struct s_node
 {
 	int				item;
+	int				index;
 	struct s_node	*prev;
 	struct s_node	*next;
 }	t_node;
 
 typedef struct s_stack
 {
-	t_node	*first;
+	t_node	*first;	
 }	t_stack;
 
 t_node	*new_node(int x);
@@ -38,16 +40,17 @@ void	free_stack(t_stack *stack);
 int		stack_size(t_stack *stack);
 int		contains(int x, t_stack *stack);
 void	print_list(t_stack *stack);
-int		ra(t_stack *a, int print);
-int		rb(t_stack *b, int print);
-int		rr(t_stack *a, t_stack *b, int print);
-int		rra(t_stack *a, int print);
-int		rrb(t_stack *b, int print);
-int		rrr(t_stack *a, t_stack *b, int print);
-int		sa(t_stack *a, int print);
-int		sb(t_stack *b, int print);
-int		ss(t_stack *a, t_stack *b, int print);
-int		pa(t_stack *a, t_stack *b, int print);
-int		pb(t_stack *a, t_stack *b, int print);
+void	rank_values(t_stack *stack);
+int		ra(t_stack *a, t_bench *bench);
+int		rb(t_stack *b, t_bench *bench);
+int		rr(t_stack *a, t_stack *b, t_bench *bench);
+int		rra(t_stack *a, t_bench *bench);
+int		rrb(t_stack *b, t_bench *bench);
+int		rrr(t_stack *a, t_stack *b, t_bench *bench);
+int		sa(t_stack *a, t_bench *bench);
+int		sb(t_stack *b, t_bench *bench);
+int		ss(t_stack *a, t_stack *b, t_bench *bench);
+int		pa(t_stack *a, t_stack *b, t_bench *bench);
+int		pb(t_stack *a, t_stack *b, t_bench *bench);
 
 #endif

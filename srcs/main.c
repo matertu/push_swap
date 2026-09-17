@@ -29,7 +29,7 @@ int main(int argc, char **argv)
     {
 		if (compile_list(&a, start, argc, argv))
 		{
-			if (run_algorithm(a, b, &flags, &relatory))
+			if (run_algorithm(&a, &b, &flags, &relatory))
 			{
 				print_list(&a);
 				free_stack(&a);
@@ -126,27 +126,27 @@ int main(int argc, char **argv)
 // int	execute_op(t_stack *a, t_stack *b, char *op)
 // {
 // 	if (!ft_strncmp(op, "sa", 3))
-// 		return (sa(a, 0));
+// 		return (sa(a, NULL));
 // 	if (!ft_strncmp(op, "sb", 3))
-// 		return (sb(b, 0));
+// 		return (sb(b, NULL));
 // 	if (!ft_strncmp(op, "ss", 3))
-// 		return (ss(a, b, 0));
+// 		return (ss(a, b, NULL));
 // 	if (!ft_strncmp(op, "pa", 3))
-// 		return (pa(a, b, 0));
+// 		return (pa(a, b, NULL));
 // 	if (!ft_strncmp(op, "pb", 3))
-// 		return (pb(a, b, 0));
+// 		return (pb(a, b, NULL));
 // 	if (!ft_strncmp(op, "ra", 3))
-// 		return (ra(a, 0));
+// 		return (ra(a, NULL));
 // 	if (!ft_strncmp(op, "rb", 3))
-// 		return (rb(b, 0));
+// 		return (rb(b, NULL));
 // 	if (!ft_strncmp(op, "rr", 3))
-// 		return (rr(a, b, 0));
+// 		return (rr(a, b, NULL));
 // 	if (!ft_strncmp(op, "rra", 4))
-// 		return (rra(a, 0));
+// 		return (rra(a, NULL));
 // 	if (!ft_strncmp(op, "rrb", 4))
-// 		return (rrb(b, 0));
+// 		return (rrb(b, NULL));
 // 	if (!ft_strncmp(op, "rrr", 4))
-// 		return (rrr(a, b, 0));
+// 		return (rrr(a, b, NULL));
 // 	return (-1);
 // }
 

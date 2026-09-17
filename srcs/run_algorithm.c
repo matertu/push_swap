@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   run_algorithm.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msouza-t <msouza-t@student.42.fr>          +#+  +:+       +#+        */
+/*   By: matheus <matheus@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/26 20:05:04 by matheus           #+#    #+#             */
-/*   Updated: 2026/08/19 22:24:41 by msouza-t         ###   ########.fr       */
+/*   Updated: 2026/09/17 02:45:38 by matheus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 void    initialize_bench_relatory(t_bench *bench_relatory)
 {
     ft_memset(bench_relatory, 0, sizeof(t_bench));
+    bench_relatory->print = 1;
 }
 
 int	run_algorithm(t_stack *a, t_stack *b, t_flags *flags, t_bench *bench_relatory)
 {
 	initialize_bench_relatory(bench_relatory);
+	bench_relatory->print = 0;
 	bench_relatory->disorder = calculate_disorder(a);
 	if (flags->algorithm == adaptive || flags->algorithm == none)
 		flags->algorithm = chose_algorithm(bench_relatory->disorder);
