@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pilha.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msouza-t <msouza-t@student.42.fr>          +#+  +:+       +#+        */
+/*   By: matheus <matheus@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 21:01:48 by msouza-t          #+#    #+#             */
-/*   Updated: 2026/08/19 21:16:56 by msouza-t         ###   ########.fr       */
+/*   Updated: 2026/09/13 23:12:35 by matheus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ t_node	*new_node(int x)
 	return (n);
 }
 
-/* adiciona em a-1 (visual bottom) */
 int	push(t_node *node, t_stack *stack)
 {
 	if (!stack || !node)
@@ -50,7 +49,6 @@ int	push(t_node *node, t_stack *stack)
 	return (1);
 }
 
-/* adiciona em a0 (visual top) */
 int	push_first(t_node *node, t_stack *stack)
 {
 	if (!stack || !node)
@@ -175,10 +173,6 @@ void	print_list(t_stack *stack)
 			break ;
 	}
 }
-
-/* ================================================================= */
-/* OPERACOES                                                          */
-/* ================================================================= */
 
 static int	shift_up(t_stack *a)
 {
