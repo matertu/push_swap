@@ -1,0 +1,66 @@
+{
+  "simple": [
+    {
+      "test_id": 1,
+      "stack_size": 10000,
+      "algorithm": "simple",
+      "total_ops": 12306972,
+      "sorted": true,
+      "execution_time_ms": 6867.449,
+      "sa": 0,
+      "sb": 0,
+      "ss": 0,
+      "pa": 19996,
+      "pb": 19996,
+      "ra": 12169954,
+      "rb": 0,
+      "rr": 0,
+      "rra": 12403998,
+      "rrb": 0,
+      "rrr": 0
+    }
+  ],
+  "medium": [
+    {
+      "test_id": 1,
+      "stack_size": 10000,
+      "algorithm": "medium",
+      "total_ops": 375377,
+      "sorted": true,
+      "execution_time_ms": 1395.811,
+      "sa": 0,
+      "sb": 0,
+      "ss": 0,
+      "pa": 20000,
+      "pb": 20000,
+      "ra": 349852,
+      "rb": 180376,
+      "rr": 0,
+      "rra": 0,
+      "rrb": 180526,
+      "rrr": 0
+    }
+  ],
+  "complex": [
+    {
+      "test_id": 1,
+      "stack_size": 10000,
+      "algorithm": "complex",
+      "total_ops": 215392,
+      "sorted": true,
+      "execution_time_ms": 778.006,
+      "sa": 0,
+      "sb": 0,
+      "ss": 0,
+      "pa": 150784,
+      "pb": 150784,
+      "ra": 129216,
+      "rb": 0,
+      "rr": 0,
+      "rra": 0,
+      "rrb": 0,
+      "rrr": 0
+    }
+  ],
+  "adaptive": []
+}

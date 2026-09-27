@@ -1,10 +1,28 @@
-NAME        = libstack.a
-CC          = cc
-CFLAGS      = -Wall -Wextra -Werror
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: msouza-t <msouza-t@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2026/07/30 21:01:48 by msouza-t          #+#    #+#              #
+#    Updated: 2026/09/26 20:06:00 by msouza-t         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-SRCS =	pilha.c
+NAME    = libstack.a
+CC      = cc
+CFLAGS  = -Wall -Wextra -Werror
 
-OBJS        = $(SRCS:.c=.o)
+SRCS    = stack_init.c \
+          stack_push.c \
+          stack_ops_swap.c \
+          stack_ops_rotate.c \
+          stack_ops_rev_rotate.c \
+          stack_ops_push.c \
+          stack_rank.c
+
+OBJS    = $(SRCS:.c=.o)
 
 all: $(NAME)
 

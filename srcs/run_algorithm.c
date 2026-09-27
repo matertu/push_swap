@@ -6,52 +6,46 @@
 /*   By: matheus <matheus@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/26 20:05:04 by matheus           #+#    #+#             */
-/*   Updated: 2026/09/17 02:45:38 by matheus          ###   ########.fr       */
+/*   Updated: 2026/09/27 15:30:36 by matheus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void    initialize_bench_relatory(t_bench *bench_relatory)
+void	initialize_bench(t_bench *bench)
 {
-    ft_memset(bench_relatory, 0, sizeof(t_bench));
-    bench_relatory->print = 1;
+	ft_memset(bench, 0, sizeof(t_bench));
+	bench->print = 1;
 }
 
-int	run_algorithm(t_stack *a, t_stack *b, t_flags *flags, t_bench *bench_relatory)
-{
-	initialize_bench_relatory(bench_relatory);
-	bench_relatory->print = 0;
-	bench_relatory->disorder = calculate_disorder(a);
-	if (flags->algorithm == adaptive || flags->algorithm == none)
-		flags->algorithm = chose_algorithm(bench_relatory->disorder);
-	bench_relatory->algorithm = flags->algorithm;
-	if (flags->algorithm == simple)
-	{
-		if (!run_simple_algorithm(a, b, bench_relatory))
-			return (0);
-	}
-	else if (flags->algorithm == medium)
-	{
-		if (!run_medium_algorithm(a, b, bench_relatory))
-			return (0);
-	}
-	else if (flags->algorithm == complex)
-	{
-		if (!run_complex_algorithm(a, b, bench_relatory))
-			return (0);
-	}
-	print_bench(bench_relatory, flags);
-	return (1);
-}
-
-t_algorithm	chose_algorithm(double disorder)
+t_algorithm	choose_algorithm(double disorder)
 {
 	if (disorder < 0.2)
 		return (simple);
 	if (disorder < 0.5)
 		return (medium);
 	return (complex);
+}
+
+int	run_algorithm(t_stack *a, t_stack *b, t_flags *flags, t_bench *bench)
+{
+	int	res;
+
+	initialize_bench(bench);
+	bench->disorder = calculate_disorder(a);
+	if (flags->algorithm == adaptive || flags->algorithm == none)
+		bench->algorithm = choose_algorithm(bench->disorder);
+	else
+		bench->algorithm = flags->algorithm;
+	res = 1;
+	if (bench->algorithm == simple)
+		res = run_simple_algorithm(a, b, bench);
+	else if (bench->algorithm == medium)
+		res = run_medium_algorithm(a, b, bench);
+	else if (bench->algorithm == complex)
+		res = run_complex_algorithm(a, b, bench);
+	print_bench(bench, flags);
+	return (res);
 }
 
 double	calculate_disorder(t_stack *a)

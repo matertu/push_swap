@@ -3,63 +3,76 @@
 /*                                                        :::      ::::::::   */
 /*   check_input_list.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matheus <matheus@student.42.fr>            +#+  +:+       +#+        */
+/*   By: msouza-t <msouza-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 21:13:33 by msouza-t          #+#    #+#             */
-/*   Updated: 2026/07/27 22:30:45 by matheus          ###   ########.fr       */
+/*   Updated: 2026/09/27 11:15:00 by msouza-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int isnumber(char *arg)
+int	is_number(char *arg)
 {
-    int i;
+	int	i;
 
-    if (!arg || arg[0] == '\0')
-        return (0);
-    i = 0;
-    if (arg[i] == '+' || arg[i] == '-')
-        i++;
-    if (!ft_isdigit(arg[i]))
-        return (0);
-    while (arg[i] && ft_isdigit(arg[i]))
-        i++;
-    return (i);
+	if (!arg || arg[0] == '\0')
+		return (0);
+	i = 0;
+	while (ft_isspace(arg[i]))
+		i++;
+	if (arg[i] == '+' || arg[i] == '-')
+		i++;
+	if (!ft_isdigit(arg[i]))
+		return (0);
+	while (ft_isdigit(arg[i]))
+		i++;
+	while (ft_isspace(arg[i]))
+		i++;
+	if (arg[i] != '\0')
+		return (0);
+	return (i);
 }
 
 int	check_matrix_arg(int argc, char **argv, int start)
 {
-	while (start < argc)
+	int	idx;
+
+	idx = start;
+	while (idx < argc)
 	{
-		if (isnumber(argv[start]) != (int)ft_strlen(argv[start]))
+		if (!is_number(argv[idx]))
 			return (0);
-		start++;
+		idx++;
 	}
 	return (start);
 }
 
-int check_string_arg(char *arg)
+int	check_string_arg(char *arg)
 {
-    int i;
-    int len;
+	int	i;
+	int	count;
 
-    if (!arg || arg[0] == '\0')
-        return (0);
-    if (ft_isspace(arg[0]) || ft_isspace(arg[ft_strlen(arg) - 1]))
-        return (0);
-    i = 0;
-    while (arg[i])
-    {
-        len = isnumber(&arg[i]);
-        if (len == 0)
-            return (0);
-        i += len;
-        if (arg[i] == '\0')
-            return (1);
-        if (!ft_isspace(arg[i]))
-            return (0);
-		i++;
-    }
-    return (1);
+	if (!arg || arg[0] == '\0')
+		return (0);
+	i = 0;
+	count = 0;
+	while (arg[i])
+	{
+		while (arg[i] && ft_isspace(arg[i]))
+			i++;
+		if (arg[i] == '\0')
+			break ;
+		if (arg[i] == '+' || arg[i] == '-')
+			i++;
+		if (!ft_isdigit(arg[i]))
+			return (0);
+		while (ft_isdigit(arg[i]))
+			i++;
+		if (arg[i] != '\0' && !ft_isspace(arg[i]))
+			return (0);
+		count++;
+	}
+	return (count > 0);
 }
+

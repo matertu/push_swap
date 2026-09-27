@@ -1,0 +1,2 @@
+test_id,stack_size,algorithm,total_ops,sorted,execution_time_ms,sa,sb,ss,pa,pb,ra,rb,rr,rra,rrb,rrr
+1,10000,complex,215392,True,778.006,0,0,0,150784,150784,129216,0,0,0,0,0

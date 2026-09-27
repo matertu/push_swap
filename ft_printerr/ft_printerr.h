@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printerr.h                                        :+:      :+:    :+:   */
+/*   ft_printerr.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msouza-t <msouza-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 14:12:19 by msouza-t          #+#    #+#             */
-/*   Updated: 2026/08/18 17:55:38 by msouza-t         ###   ########.fr       */
+/*   Updated: 2026/09/26 20:06:00 by msouza-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,5 @@ int		ft_putptr(void *ptr);
 char	int_to_char(int n);
 void	ft_puthex(unsigned int i, int isupper, int *count);
 void	ft_puthex_long(unsigned long i, int *count);
-void	ft_puthex(unsigned int i, int isupper, int *count);
 
 #endif

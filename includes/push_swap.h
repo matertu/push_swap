@@ -6,16 +6,16 @@
 /*   By: matheus <matheus@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 21:13:54 by msouza-t          #+#    #+#             */
-/*   Updated: 2026/09/17 02:18:40 by matheus          ###   ########.fr       */
+/*   Updated: 2026/09/27 15:25:51 by matheus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PUSH_SWAP_H
-# define FT_PUSH_SWAP_H
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
 # include "../ft_printerr/ft_printerr.h"
 # include "../libft/libft.h"
-# include "../libstack/pilha.h"
+# include "../libstack/stack.h"
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -26,16 +26,16 @@ typedef enum e_algorithm
 	simple,
 	medium,
 	complex,
-	adaptive,
-}				t_algorithm;
+	adaptive
+}	t_algorithm;
 
 typedef struct s_flags
 {
 	int			bench;
 	t_algorithm	algorithm;
-}				t_flags;
+}	t_flags;
 
-typedef struct s_bench_relatory
+typedef struct s_bench
 {
 	int			print;
 	double		disorder;
@@ -52,10 +52,10 @@ typedef struct s_bench_relatory
 	int			rra;
 	int			rrb;
 	int			rrr;
-}				t_bench;
+}	t_bench;
 
 int				validate_input(int argc, char **argv, t_flags *flags);
-int				isnumber(char *arg);
+int				is_number(char *arg);
 void			put_error(void);
 int				ft_isspace(char c);
 int				ft_strcmp(const char *s1, const char *s2);
@@ -65,17 +65,19 @@ int				check_matrix_arg(int argc, char **argv, int start);
 long			ft_atol(const char *nptr);
 int				to_long(long value);
 int				compile_list(t_stack *a, int start, int argc, char **argv);
-int				compile_matrix_list(t_stack *a, int start, int argc, char **argv);
+int				compile_matrix_list(t_stack *a, int start, int argc,
+					char **argv);
 int				compile_string_list(t_stack *a, char *argv);
-int				add_node(t_node *list, long value);
-int				run_simple_algorithm(t_stack *a, t_stack *b, t_bench *bench_relatory);
-int				run_medium_algorithm(t_stack *a, t_stack *b, t_bench *bench_relatory);
-int				run_complex_algorithm(t_stack *a, t_stack *b, t_bench *bench_relatory);
-void    		initialize_bench_relatory(t_bench *bench_relatory);
-int				run_algorithm(t_stack *a, t_stack *b, t_flags *flags, t_bench *bench_relatory);
-t_algorithm		chose_algorithm(double disorder);
+int				run_simple_algorithm(t_stack *a, t_stack *b, t_bench *bench);
+int				run_medium_algorithm(t_stack *a, t_stack *b, t_bench *bench);
+int				run_complex_algorithm(t_stack *a, t_stack *b, t_bench *bench);
+void			initialize_bench(t_bench *bench);
+int				run_algorithm(t_stack *a, t_stack *b, t_flags *flags,
+					t_bench *bench);
+t_algorithm		choose_algorithm(double disorder);
 double			calculate_disorder(t_stack *a);
-char			*get_strategy(t_algorithm algo);
-void			print_bench(t_bench *bench_relatory, t_flags *flags);
+char			*get_name_algorithm(t_algorithm algo);
+void			print_bench(t_bench *bench, t_flags *flags);
+char			*get_notation_algorithm(t_algorithm algo);
 
 #endif

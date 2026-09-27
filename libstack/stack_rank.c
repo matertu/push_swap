@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   validate_input.c                                   :+:      :+:    :+:   */
+/*   stack_rank.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msouza-t <msouza-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/25 16:37:35 by matheus           #+#    #+#             */
+/*   Created: 2026/07/30 21:01:48 by msouza-t          #+#    #+#             */
 /*   Updated: 2026/09/26 20:06:00 by msouza-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	validate_input(int argc, char **argv, t_flags *flags)
+void	rank_values(t_stack *stack)
 {
-	int	start;
+	t_node	*pivot;
+	t_node	*comp;
+	int		size;
+	int		i;
+	int		j;
 
-	start = check_input_flags(argc, argv, flags);
-	if (!start || start >= argc)
-		return (0);
-	if (argc - start == 1)
+	size = stack_size(stack);
+	pivot = stack->first;
+	i = 0;
+	while (i < size)
 	{
-		if (!check_string_arg(argv[start]))
-			return (0);
+		comp = stack->first;
+		j = 0;
+		while (j < size)
+		{
+			if (comp->item < pivot->item)
+				pivot->index++;
+			comp = comp->next;
+			j++;
+		}
+		pivot = pivot->next;
+		i++;
 	}
-	else
-	{
-		if (!check_matrix_arg(argc, argv, start))
-			return (0);
-	}
-	return (start);
 }
